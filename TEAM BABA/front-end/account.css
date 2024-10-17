@@ -1,29 +1,64 @@
-body {
-    background-color: #f7f7f7;
+/* Account Page Styles */
+.content {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 90px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    border: 3px solid #f8f9fa; /* Adjust border to match existing style */
 }
 
-h2 {
-    font-size: 2rem;
-}
-
-img {
-    width: 150px;
-    height: 150px;
+.form-label {
+    font-weight: bold;
+    color: #333; /* Dark text for labels */
 }
 
 .form-control {
-    height: 40px;
+    border: 1px solid #343a40;
 }
 
-.text-muted {
-    font-size: 0.9rem;
+.btn-outline-secondary {
+    border-color: #343a40;
+    color: #343a40;
 }
 
-button {
-    font-size: 1.1rem;
-    padding: 0.6rem 1.5rem;
+.btn-outline-secondary:hover {
+    background-color: #1a2939;
+    color: white;
+    border-color: #1a2939;
 }
 
-.border {
-    border-color: #ddd;
+h5 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.form-check-label {
+    margin-left: 8px;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #1a2939;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #263548;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+    .content {
+        margin-top: 30px;
+    }
+
+    .sidebar {
+        height: auto;
+    }
+
+    .bottom-links {
+        margin-top: 20px;
+    }
 }
