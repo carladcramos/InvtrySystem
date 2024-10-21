@@ -15,7 +15,6 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('img/hardware.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
@@ -103,30 +102,4 @@ body::before {
 
 .table-container {
   margin-top: 20px;
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.slide-out {
-  animation: slideOut 1s ease-in-out forwards;
-}
-
-.slide-in {
-  animation: slideIn 1s ease-in-out forwards;
 }
