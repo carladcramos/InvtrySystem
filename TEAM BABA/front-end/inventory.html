@@ -18,22 +18,23 @@
                 <a href="POS.html">Point of Sales</a>
                 <a href="inventory.html">Inventory</a>
                 <a href="sales.html">Sales Report</a>
-              </div>
-              <div class="bottom-links">
+            </div>
+            <div class="bottom-links">
                 <a href="account.html">Account</a>
                 <a href="log.html">Logout</a>
-              </div>            
+            </div>
         </div>
-        
+
         <div class="content">
             <h3>Inventory</h3>
             <div class="search-bar">
-                <input type="text" class="form-control" placeholder="Search for anything here...">
-                <button class="btn btn-add">+ Add New Item</button>
+                <input type="text" class="form-control" id="searchBar" placeholder="Search for anything here...">
+                <!-- Add button triggers modal -->
+                <button class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addItemModal">+ Add New Item</button>
             </div>
             <div class="table-container bg-light border border-1 border-dark border rounded">
-                <table class="table table-bordered ">
-                    <thead class="table-lightborder border-1 border-darks border rounded">
+                <table class="table table-bordered">
+                    <thead class="table-light border border-1 border-dark rounded">
                         <tr>
                             <th>Product Name</th>
                             <th>Product ID</th>
@@ -44,6 +45,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Example rows -->
                         <tr>
                             <td>Drill</td>
                             <td>D06ID232435454</td>
@@ -60,62 +62,54 @@
                             <td>Reorder Now</td>
                             <td><button class="btn btn-link">></button></td>
                         </tr>
-                        <tr>
-                            <td>Electrical Tape</td>
-                            <td>D06ID232435452</td>
-                            <td>Electrical Supplies</td>
-                            <td>100</td>
-                            <td>Reorder Now</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
-                        <tr>
-                            <td>Frosted Lamp</td>
-                            <td>D06ID232435450</td>
-                            <td>Electrical Supplies</td>
-                            <td>100</td>
-                            <td>Sufficient</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
-                        <tr>
-                            <td>Teplon</td>
-                            <td>D06ID232435455</td>
-                            <td>Plumbing Supply</td>
-                            <td>100</td>
-                            <td>Reorder Now</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
-                        <tr>
-                            <td>Surface Type 3 Gang Outlet</td>
-                            <td>D06ID232435456</td>
-                            <td>Electrical Supplies</td>
-                            <td>100</td>
-                            <td>Reorder Now</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
-                        <tr>
-                            <td>Electrical Tape</td>
-                            <td>D06ID232435457</td>
-                            <td>Electrical Supplies</td>
-                            <td>100</td>
-                            <td>Sufficient</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
-                        <tr>
-                            <td>Screw Driver</td>
-                            <td>D06ID232435458</td>
-                            <td>Tools</td>
-                            <td>100</td>
-                            <td>Reorder Now</td>
-                            <td><button class="btn btn-link">></button></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <script src="inventory.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addItemModalLabel">Add New Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addItemForm">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productID" class="form-label">Product ID</label>
+                            <input type="text" class="form-control" id="productID" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" required>
+                                <option selected disabled>Choose a category</option>
+                                <option value="Tools">Tools</option>
+                                <option value="Plumbing Supply">Plumbing Supply</option>
+                                <option value="Electrical Supplies">Electrical Supplies</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="stock" class="form-label">Stock Quantity</label>
+                            <input type="number" class="form-control" id="stock" min="1" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="addItemForm">Save Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="inventory.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
